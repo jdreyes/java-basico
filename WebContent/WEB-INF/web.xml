@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>prueba</display-name>
+
+<context-param>
+	<param-name>allServletParam</param-name>
+	<param-value>Hola a todos!</param-value>
+</context-param>  
+
+<context-param>
+	<param-name>configFile</param-name>
+	<param-value>classpath:/conf.properties</param-value>
+</context-param>
+
+<servlet>
+  <servlet-name>basicServlet</servlet-name>
+  <servlet-class>com.autentia.cursos.javabasico.servlet.BasicServlet</servlet-class>
+
+  <init-param>
+  	<param-name>sample</param-name>
+  	<param-value>Hello, world!</param-value>
+  </init-param>
+  
+</servlet>
+
+<servlet>
+	<servlet-name>myHttpServlet</servlet-name>
+	<servlet-class>com.autentia.cursos.javabasico.servlet.MyHttpServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>myHttpServlet</servlet-name>
+	<url-pattern>/cookie/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>basicServlet</servlet-name>
+  <url-pattern>/basic/*</url-pattern>
+</servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
